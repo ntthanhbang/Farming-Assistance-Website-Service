@@ -41,24 +41,19 @@
             </h1>
          </div>
 
-         <div class="work-wrapper">
-            <div class="work-wrapper-row">
-                <div class="work-items">
-                        <a class = "workItemsLink" href = "sellCrops.html" target ="_self"> Sell crops</a>
-                    </div>
-                    <div class="work-items">
-                        <a class = "workItemsLink" href = "checkCropsSeason.html" target ="_self"> Check crops season</a> 
-                    </div>
-                    <div class="work-items">
-                        <a class = "workItemsLink" href = "farmerTips.html" target ="_self"> Tips for farmer</a>
-                    </div>
-                    <div class="work-items">
-                        <a class = "workItemsLink" href = "soldCrops.html" target ="_self"> View sold crops</a>
-                    </div>
-            </div>
+         <div class="message-wrapper">
+            <div class="chat-container">
+                <div class="chat-box" id="chat-box">
+                  <!-- Messages will appear here -->
+                </div>
+                <div class="chat-input-area">
+                  <input type="text" id="chat-input" placeholder="Type your message..." />
+                  <button class="button" id="send-button">Send</button>
+                </div>
+        </div>
             <br>
             
-            <!-- YOUR CODE IS HERE -->
+
 
          </div> 
 
@@ -105,5 +100,7 @@
          <footer class="footer">
             <p>&copy; 2025 Farming Assistance. All rights reserved.</p>
         </footer>
+
+        <script src="message.js"></script>
     </body>
 </html>
