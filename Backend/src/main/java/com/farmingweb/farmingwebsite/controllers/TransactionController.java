@@ -1,0 +1,31 @@
+package com.farmingweb.farmingwebsite.controllers;
+
+import com.farmingweb.farmingwebsite.entities.Transaction;
+import com.farmingweb.farmingwebsite.entities.TransactionId;
+import com.farmingweb.farmingwebsite.services.TransactionService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/transactions")
+public class TransactionController {
+    @Autowired
+    private TransactionService transactionService;
+
+    @GetMapping
+    public List<Transaction> getAll() {
+        return transactionService.getAll();
+    }
+
+    @PostMapping
+    public Transaction create(@RequestBody Transaction obj) {
+        return transactionService.create(obj);
+    }
+
+    @DeleteMapping
+    public void delete(@PathVariable TransactionId id) {
+        transactionService.delete(id);
+    }
+}
