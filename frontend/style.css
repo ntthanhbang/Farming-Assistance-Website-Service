@@ -1,0 +1,234 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f4f4f4;
+}
+
+.container{
+    /*border: 2px solid red;*/
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.leftSide, .rightSide{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.leftSide{
+    padding: 20px;
+}
+
+.rightSide{
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.rightSide h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+/*LOGIN PICTURE FOR FARMER*/
+#farmer-login{
+    background: url('images/field_background.jfif') no-repeat center center/cover;
+}
+/*BACKGROUND PICTURE FOR FARMER*/
+#farmer-background{
+    background: url('images/farmer.jfif') no-repeat center center/cover;
+}
+/*FARMER TEXT*/
+#farmer-background span{
+    color: rgb(13, 246, 13);
+}
+/*LOGIN PICTURE FOR ADMIN*/
+#admin-login{
+    background: url('images/admin-login.jfif') no-repeat center center/cover;
+}
+/*BACKGROUND PICTURE FOR ADMIN*/
+#admin-background{
+    background: url('images/admin.jfif') no-repeat center center/cover;
+}
+/*ADMIN TEXT*/
+#admin-background span{
+    color: darkblue;
+}
+/*LOGIN PICTURE FOR SUPPLIER*/
+#supplier-login{
+    background: url('images/supplier-login.jfif') no-repeat center center/cover;
+    }
+/*BACKGROUND PICTURE FOR SUPPLIER*/
+#supplier-background{
+    background: url('images/supp.jfif') no-repeat center center/cover;
+}
+/*SUPPLIER TEXT*/
+#supplier-background span{
+    color: red;
+}
+
+/* LOGIN WRAPPER*/
+.login-container{
+    width: 420px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    color: black;
+    border-radius: 10px;
+    padding: 30px 40px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 10px rbga(0, 0, 0, .2);
+}
+
+/*LOGIN HEADER*/
+.login-container h1{
+    font-size: 36px;
+    text-align: center;
+}
+
+/*USERNAME & PASSWORD BOX*/
+.login-container .input-box{
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+/*INPUT GOES HERE*/
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255,255,255, .2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #333;
+    padding: 20px 45px 20px 20px;
+}
+
+/*INPUT PLACEHOLDER*/
+.input-box input::placeholder{
+    color: rgb(0, 0, 0);
+}
+/*BOXICON POSITION*/
+.input-box i{
+    margin-right: 10px;
+    float: right;
+    transform: translateY(-190%);
+    font-size: 20px;
+}
+/*REMEMBER ME - FORGOT PASSWORD BOX*/
+.login-container .remember-forgot{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -15px 0 15px;
+}
+/*CHECKBOX FOR REMEMBER ME*/
+.remember-forgot label input{
+    accent-color: rgb(255, 255, 255);
+    margin-right: 3px;
+}
+/*FORGOT PASSWORD LINK*/
+.remember-forgot a{
+    color: rgb(138, 8, 138);
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.remember-forgot a:hover{
+    text-decoration: underline;
+}
+/*LOGIN BUTTON*/
+.login-container .btn {
+    width: 100%;
+    height: 45px;
+    background: white;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+    transition: 0.4s;
+}
+
+.login-container .btn:hover{
+    background-color: rgb(17, 141, 3);
+    color: white;
+}
+/*REGISTER HERE*/
+.login-container .register-link{
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+/*REGISTER HERE LINK*/
+.register-link a{
+    color: rgb(138, 8, 138);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link p a:hover{
+    text-decoration: underline;
+}
+
+/*  STYLE.CSS FOR login.html (scrapped idea)
+.wrapper{
+    width: 100%;
+    height: 50%;
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.wrapper h2{
+    margin-bottom: 50px;
+}
+
+.login-btn{
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.farmer{
+    background-color: #4CAF50; color: white;
+    margin-bottom: 20px;
+    
+}
+.admin{
+    background-color: #f44336; color: white;
+    margin-bottom: 20px;
+}
+.supplier{
+    background-color: #2196F3; color: white;
+    margin-bottom: 20px;
+}
+*/
+
+

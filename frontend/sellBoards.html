@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- <meta charset="UTF-8">
+        <link rel="stylesheet" href="homePage.css">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+        <meta name="description" content="Farming assistance website">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet"> -->
+
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Farming assistance website">
+        <title>Farming Assistance</title>
+    
+        <link rel="stylesheet" href="homePage.css">
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body>
+         <div class="image-wrapper">
+            <img src="FIcon.png" class="icon">
+         </div>
+
+         <div class="select-wrapper">
+            <a class="select-items-after-login" href="">Home</a>
+            <a class="select-items-after-login" href="">Contact</a>
+            <a class="select-items-after-login" href="homePage.html">LogOut</a>
+         </div>
+
+         <div class="header-wrapper">
+            <h1 class="words">
+                FARMING-TO-TABLE GOODNESS
+            </h1>
+         </div>
+
+         <div class="work-wrapper">
+            <div class="work-header">
+                <div class="work-items">
+                    <a class = "workItemsLink" href = "viewComplaints.html" target ="_self">View complaints</a>
+                </div>
+                <div class="work-items">
+                    <a class = "workItemsLink" href = "sellBoards.html" target ="_self">Sell boards</a> 
+                </div>
+                <div class="work-items">
+                    <a class = "workItemsLink" href = "accountManagement.html" target ="_self">Accounts management</a> 
+                </div>
+            </div>
+
+            <!-- YOUR CODE IS HERE -->
+            <div class="sellBoards-container">
+                <div class="sellBoards-header">
+                    <h1>List of Transactions</h1>
+                </div>
+                
+                <table class="sellBoards-list">
+                    <thead>
+                        <tr>
+                            <th>Transaction ID</th>
+                            <th>Transaction Item ID</th> 
+                            <th>Item ID</th>
+                            <th>Quantity</th>
+                            <th>Farmer ID</th>
+                            <th>Supplier ID</th>
+                            <th>Payment Status</th>
+                            <th>TimeStamp</th>
+                            <th>Payment Method</th>
+                        </tr>
+                    </thead>
+    
+                    <tbody>
+                        <tr>
+                            <td>TX1001</td>
+                            <td>TI001</td> 
+                            <td>ITEM001</td>
+                            <td>10</td>
+                            <td>F123</td>
+                            <td>S456</td>
+                            <td>Paid</td>
+                            <td>2024-06-01T10:32</td>
+                            <td>Credit Card</td>
+                        </tr>
+    
+                        <tr>
+                            <td>TX1002</td>
+                            <td>TI002</td> 
+                            <td>ITEM002</td>
+                            <td>4</td>
+                            <td>F152</td>
+                            <td>S526</td>
+                            <td>Unpaid</td>
+                            <td>2024-12-13T10:32</td>
+                            <td>NA</td>
+                        </tr>
+    
+                        <tr>
+                            <td>TX1003</td>
+                            <td>TI003</td> 
+                            <td>ITEM003</td>
+                            <td>6</td>
+                            <td>F734</td>
+                            <td>S633</td>
+                            <td>Paid</td>
+                            <td>2025-04-30T10:32</td>
+                            <td>Debit Card</td>
+                        </tr>
+    
+                        <tr>
+                            <td>TX1004</td>
+                            <td>TI004</td> 
+                            <td>ITEM004</td>
+                            <td>15</td>
+                            <td>F862</td>
+                            <td>S653</td>
+                            <td>Unpaid</td>
+                            <td>2024-02-03T10:32</td>
+                            <td>NA</td>
+                        </tr>
+    
+                        <tr>
+                            <td>TX1005</td>
+                            <td>TI005</td> 
+                            <td>ITEM005</td>
+                            <td>5</td>
+                            <td>F254</td>
+                            <td>S521</td>
+                            <td>Paid</td>
+                            <td>2024-01-12T10:32</td>
+                            <td>Digital Wallet</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+         </div>
+
+        
+
+         <footer class="footer">
+            <p>&copy; 2025 Farming Assistance. All rights reserved.</p>
+        </footer>
+    </body>
+</html>

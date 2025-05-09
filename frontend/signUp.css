@@ -1,0 +1,208 @@
+body{
+    margin: 0;
+    display: flex;
+}
+
+#main{
+    position: fixed;
+    left: 0px;
+    height: 100vh;
+    width: 40vw;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    display: grid;
+    grid-template-columns: repeat(16, 6.25%);
+    grid-template-rows: repeat(16, 6.25%);
+}
+
+#logInLink{
+    display: flex;
+    justify-content: right;
+    align-items: end;
+    margin: 0px;
+    padding-right: 20px;
+    grid-column: 1 / 17;
+    grid-row: 1;
+}
+
+#title{
+    display: flex;
+    justify-content: center;
+    align-items:end;
+    margin: 0px;
+    padding: 15px;
+    font-size: 1.5cm;
+    grid-column: 1 / 17;
+    grid-row: 4 / 7;
+}
+
+#firstName{
+    grid-column: 3 / 9;
+    grid-row: 7;
+}
+
+#lastName{
+    grid-column: 9 / 15;
+    grid-row: 7;
+}
+
+#userName{
+    grid-column: 3 / 15;
+    grid-row: 8;
+}
+
+#email{
+    grid-column: 3 / 15;
+    grid-row: 9;
+}
+
+.passContainer{
+    position: relative;
+    display: flex;
+    margin: 7px;
+    grid-column: 3 / 15;
+    grid-row: 10;
+}
+#togglePass{
+    position: absolute;
+    cursor: pointer;
+    top: inherit;
+    right: 10px;
+    height: 30px;
+    width: 30px;
+}
+#password{
+    margin: 0px;
+    width: 100%;
+}
+
+#passwordRequirement{
+    font-weight: bolder;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(2, 50%);
+    margin: 0px;
+    padding: 0 0 0 25px;
+    grid-column: 3 / 15;
+    grid-row: 11 / 12;
+}
+
+button {
+    background: rgb(11, 114, 11);
+    border-radius: 10px;
+    grid-column: 7 / 11;
+    grid-row: 13;
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: 'Done';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to left, ivory 15%, rgb(161, 226, 161) 30%, rgb(57, 135, 57) 55%, rgb(11, 114, 11) 85%);
+    opacity: 0;
+    transition: opacity 2s;
+    border-radius: 10px;
+}
+
+button:hover::before {
+    opacity: 1;
+}
+
+input{
+    border-color: black;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    outline: none;
+    transition: border-color 0.3s;
+    margin: 7px;
+    padding-left: 10px;
+    font-size: 110%
+}
+input.invalid{
+    border-color: red;
+}
+input:focus{
+    border-color: black;
+}
+
+a{
+    color: rgb(4, 117, 0);
+}
+a:hover{
+    color: red;
+    text-decoration: none;
+}
+
+#sideBackground{
+    position: fixed;
+    right: 0px;
+    height: 100vh;
+    width: 60vw;
+    display: grid;
+    grid-template-areas:
+        "upper"
+        "lower";
+}
+
+#upperBackground{
+    position: relative;
+    grid-area: upper;
+    display: flex;
+    flex-direction: row;
+}
+
+#lowerBackground{
+    position: relative;
+    grid-area: lower;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#whiteSection{
+    background: white;
+    width: 30%;
+}
+#upperPhoto,
+#lowerPhoto{
+    width: 70%;
+    background-size: cover;
+    background-position: center;
+}
+
+#upperTitle{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: inline;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    font-size: 1.5cm;
+    padding: 10px 100px 10px 100px;
+    margin: 0px;
+    box-sizing: border-box;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 61%, rgba(255, 255, 255, 0) 61%);
+}
+
+#lowerTitle{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: inline;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    font-size: 1.5cm;
+    padding: 10px 100px 10px 100px;
+    margin: 0px;
+    box-sizing: border-box;
+}
