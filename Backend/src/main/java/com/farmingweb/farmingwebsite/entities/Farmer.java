@@ -1,5 +1,9 @@
 package com.farmingweb.farmingwebsite.entities;
 
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -29,4 +33,23 @@ public class Farmer {
     @Column(name = "FarmLocation")
     private String farmLocation;
 
+    @OneToMany(mappedBy = "farmer")
+    @JsonIgnore
+    private List<Complaint> complaints;
+
+    @OneToMany(mappedBy = "farmer")
+    @JsonIgnore
+    private List<Notification> notifications;
+
+    @OneToMany(mappedBy = "send")
+    @JsonIgnore
+    private List<FarmerFarmerMessage> sentMessages;
+
+    @OneToMany(mappedBy = "recieve")
+    @JsonIgnore
+    private List<FarmerFarmerMessage> recieveMessages;
+
+    @OneToMany(mappedBy = "farmer")
+    @JsonIgnore
+    private List<SupplierFarmerMessage> supplierMessages;
 }

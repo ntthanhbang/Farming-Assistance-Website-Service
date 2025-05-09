@@ -1,5 +1,7 @@
 package com.farmingweb.farmingwebsite.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -20,6 +22,13 @@ public class TransactionItem {
     @Column(name = "Quantity", nullable = false)
     private float quantity;
 
-    @Column(name = "TransactionID")
-    private int transactionID;
+    @ManyToOne
+    @JoinColumn(name = "TransactionID", nullable = false)
+    @JsonIgnore
+    private Transaction transaction;
+
+    @ManyToOne
+    @JoinColumn(name = "ItemID", insertable = false, updatable = false)
+    @JsonIgnore
+    private InventoryItem item;
 }

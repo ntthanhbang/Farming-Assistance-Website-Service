@@ -1,15 +1,18 @@
 package com.farmingweb.farmingwebsite.entities;
 
+import java.util.List;
+import java.time.LocalDateTime;
+
 import com.farmingweb.farmingwebsite.enums.PaymentMethod;
 import com.farmingweb.farmingwebsite.enums.PaymentStatus;
-import java.time.LocalDateTime;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
 @Data
-@IdClass(TransactionId.class)
+// @IdClass(TransactionId.class)
 @Table(name = "Transaction")
 public class Transaction {
     @Id
@@ -17,13 +20,6 @@ public class Transaction {
     @Column(name = "TransactionID", nullable = false)
     private int transactionID;
 
-    @Id
-    @Column(name = "FarmerID", length = 8)
-    private String farmerID;
-
-    @Id
-    @Column(name = "SupplierID", length = 8)
-    private String supplierID;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "PaymentMethod", nullable = false)
@@ -34,5 +30,19 @@ public class Transaction {
     private PaymentStatus paymentStatus;
 
     @Column(name = "Timestamp")
-    private LocalDateTime Timestamp;
+    private LocalDateTime timestamp;
+
+    @ManyToOne
+    @JoinColumn(name = "FarmerID")
+    @JsonIgnore
+    private Farmer farmer;
+
+    @ManyToOne
+    @JoinColumn(name = "SupplierID")
+    @JsonIgnore
+    private Supplier supplier;
+
+    @OneToMany(mappedBy = "transaction")
+    @JsonIgnore
+    private List<TransactionItem> transactionItems;
 }

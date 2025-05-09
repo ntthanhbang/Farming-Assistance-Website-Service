@@ -3,6 +3,9 @@ package com.farmingweb.farmingwebsite.entities;
 import java.io.Serializable;
 import java.util.Objects;
 
+import lombok.Data;
+
+@Data
 public class TransactionItemId implements Serializable {
     private int transItemID;
     private int itemID;
@@ -14,8 +17,7 @@ public class TransactionItemId implements Serializable {
         if (this == o) return true;
         if (!(o instanceof TransactionItemId)) return false;
         TransactionItemId that = (TransactionItemId) o;
-        return  Objects.equals(transItemID, that.transItemID) &&
-                Objects.equals(itemID, that.itemID);
+        return transItemID == that.transItemID && itemID == that.itemID;
     }
 
     @Override

@@ -1,5 +1,9 @@
 package com.farmingweb.farmingwebsite.entities;
 
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -25,4 +29,12 @@ public class Supplier {
 
     @Column(name = "Address")
     private String address;
+
+    @OneToMany(mappedBy = "supplier")
+    @JsonIgnore
+    private List<SupplierFarmerMessage> supplierMessages;
+
+    @OneToMany(mappedBy = "supplier")
+    @JsonIgnore
+    private List<Advertisement> advertisement;
 }
