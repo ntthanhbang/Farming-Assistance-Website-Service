@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:5500")
 @RestController
 @RequestMapping("/api/supplierfarmermessages")
 public class SupplierFarmerMessageController {
@@ -20,11 +21,11 @@ public class SupplierFarmerMessageController {
     }
 
     @PostMapping
-    public SupplierFarmerMessage create(@RequestBody SupplierFarmerMessage obj) {
-        return supplierfarmermessageService.create(obj);
+    public SupplierFarmerMessage create(@RequestBody SupplierFarmerMessage sfm) {
+        return supplierfarmermessageService.create(sfm);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public void delete(@PathVariable SupplierFarmerMessageId id) {
         supplierfarmermessageService.delete(id);
     }

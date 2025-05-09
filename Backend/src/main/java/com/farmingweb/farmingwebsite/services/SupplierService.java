@@ -27,6 +27,7 @@ public class SupplierService {
     //Login Function
     public Supplier login(String email, String password) {
         return supplierRepository.findByEmailAndPassword(email, password)
-                .orElseThrow(() -> new RuntimeException("Invalid credentials"));
+                // .orElseThrow(() -> new RuntimeException("Invalid credentials"));
+                .orElse(null);
     }
 }

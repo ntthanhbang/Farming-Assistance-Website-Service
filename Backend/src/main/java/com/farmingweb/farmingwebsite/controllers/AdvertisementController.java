@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:5500")
 @RestController
 @RequestMapping("/api/advertisements")
 public class AdvertisementController {
@@ -19,11 +20,11 @@ public class AdvertisementController {
     }
 
     @PostMapping
-    public Advertisement create(@RequestBody Advertisement obj) {
-        return advertisementService.create(obj);
+    public Advertisement create(@RequestBody Advertisement ad) {
+        return advertisementService.create(ad);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
         advertisementService.delete(id);
     }
