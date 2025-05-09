@@ -1,5 +1,5 @@
 body{
-    background-image: url(betterBG.jpg);
+    background-image: url(../betterBG.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -32,7 +32,7 @@ body{
     height: auto;
     border: 5px #8A2BE2;
     border-radius: 20px;
-    /* border-style: dashed; */
+    border-style: solid;
     padding: 5px;
     margin: 5px;
 }
