@@ -1,5 +1,6 @@
 package com.farmingweb.farmingwebsite.controllers;
 
+import com.farmingweb.farmingwebsite.dtos.LoginRequest;
 import com.farmingweb.farmingwebsite.entities.Administrator;
 import com.farmingweb.farmingwebsite.services.AdministratorService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,12 @@ public class AdministratorController {
         return administratorService.create(obj);
     }
 
-    @DeleteMapping
+    //Login Function
+    @PostMapping("/login")
+    public Administrator login(@RequestBody LoginRequest request) {
+        return administratorService.login(request.getEmail(), request.getPassword());
+    }
+    @DeleteMapping("/{id}")
     public void delete(@PathVariable String id) {
         administratorService.delete(id);
     }

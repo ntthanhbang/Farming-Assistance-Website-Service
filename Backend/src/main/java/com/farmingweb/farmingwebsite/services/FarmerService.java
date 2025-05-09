@@ -23,4 +23,11 @@ public class FarmerService {
     public void delete(String id) {
         farmerRepository.deleteById(id);
     }
+
+    //Login Function
+    public Farmer login(String email, String password) {
+        return farmerRepository.findByEmailAndPassword(email, password)
+                // .orElseThrow(() -> new RuntimeException("Invalid credentials"));
+                .orElse(null);
+    }
 }

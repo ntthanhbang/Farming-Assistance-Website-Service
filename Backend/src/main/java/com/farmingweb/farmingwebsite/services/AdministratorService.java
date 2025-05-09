@@ -23,4 +23,10 @@ public class AdministratorService {
     public void delete(String id) {
         administratorRepository.deleteById(id);
     }
+
+    //Login Function
+    public Administrator login(String email, String password) {
+        return administratorRepository.findByEmailAndPassword(email, password)
+                .orElseThrow(() -> new RuntimeException("Invalid credentials"));
+    }
 }

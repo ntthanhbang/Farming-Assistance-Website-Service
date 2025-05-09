@@ -1,5 +1,6 @@
 package com.farmingweb.farmingwebsite.controllers;
 
+import com.farmingweb.farmingwebsite.dtos.LoginRequest;
 import com.farmingweb.farmingwebsite.entities.Farmer;
 import com.farmingweb.farmingwebsite.services.FarmerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,13 @@ public class FarmerController {
         return farmerService.create(obj);
     }
 
-    @DeleteMapping
+    //Login function
+    @PostMapping("/login")
+    public Farmer login(@RequestBody LoginRequest request) {
+        return farmerService.login(request.getEmail(), request.getPassword());
+    }
+
+    @DeleteMapping("/{id}")
     public void delete(@PathVariable String id) {
         farmerService.delete(id);
     }

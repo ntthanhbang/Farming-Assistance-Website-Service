@@ -1,5 +1,6 @@
 package com.farmingweb.farmingwebsite.controllers;
 
+import com.farmingweb.farmingwebsite.dtos.LoginRequest;
 import com.farmingweb.farmingwebsite.entities.Supplier;
 import com.farmingweb.farmingwebsite.services.SupplierService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,13 @@ public class SupplierController {
         return supplierService.create(obj);
     }
 
-    @DeleteMapping
+    //Login Function
+    @PostMapping("/login")
+    public Supplier login(@RequestBody LoginRequest request) {
+        return supplierService.login(request.getEmail(), request.getPassword());
+    }
+
+    @DeleteMapping("/{id}")
     public void delete(@PathVariable String id) {
         supplierService.delete(id);
     }
