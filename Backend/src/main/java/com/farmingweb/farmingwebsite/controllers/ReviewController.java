@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:5500")
 @RestController
 @RequestMapping("/api/reviews")
 public class ReviewController {
@@ -20,11 +21,11 @@ public class ReviewController {
     }
 
     @PostMapping
-    public Review create(@RequestBody Review obj) {
-        return reviewService.create(obj);
+    public Review create(@RequestBody Review review) {
+        return reviewService.create(review);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public void delete(@PathVariable ReviewId id) {
         reviewService.delete(id);
     }

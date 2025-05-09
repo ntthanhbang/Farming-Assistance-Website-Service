@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:5500")
 @RestController
 @RequestMapping("/api/createitems")
 public class CreateItemController {
@@ -20,11 +21,11 @@ public class CreateItemController {
     }
 
     @PostMapping
-    public CreateItem create(@RequestBody CreateItem obj) {
-        return createitemService.create(obj);
+    public CreateItem create(@RequestBody CreateItem createitem) {
+        return createitemService.create(createitem);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public void delete(@PathVariable CreateItemId id) {
         createitemService.delete(id);
     }

@@ -4,11 +4,12 @@ import com.farmingweb.farmingwebsite.dtos.LoginRequest;
 import com.farmingweb.farmingwebsite.entities.Farmer;
 import com.farmingweb.farmingwebsite.services.FarmerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = {"http://localhost:5500", "http://127.0.0.1:5500"})
 @RestController
 @RequestMapping("/api/farmers")
 public class FarmerController {
@@ -21,14 +22,20 @@ public class FarmerController {
     }
 
     @PostMapping
-    public Farmer create(@RequestBody Farmer obj) {
-        return farmerService.create(obj);
+    public Farmer create(@RequestBody Farmer farmer) {
+        return farmerService.create(farmer);
     }
 
     //Login function
     @PostMapping("/login")
-    public Farmer login(@RequestBody LoginRequest request) {
-        return farmerService.login(request.getEmail(), request.getPassword());
+    public ResponseEntity<?> login(@RequestBody LoginRequest request) {
+        Farmer farmer = farmerService.login(request.getEmail(), request.getPassword());
+
+        if (farmer != null) {
+            return ResponseEntity.ok(farmer);
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid email or password");
+        }
     }
 
     @DeleteMapping("/{id}")

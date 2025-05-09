@@ -24,6 +24,10 @@ public class InventoryItemService {
         return inventoryitemRepository.save(item);
     }
 
+    //Display and search
+    public List<InventoryItem> searchByName(String name) {
+        return inventoryitemRepository.findByNameContainingIgnoreCase(name);
+    }
 
     public void delete(Integer id) {
         inventoryitemRepository.deleteById(id);

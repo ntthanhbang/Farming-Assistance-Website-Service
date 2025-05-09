@@ -27,6 +27,7 @@ public class AdministratorService {
     //Login Function
     public Administrator login(String email, String password) {
         return administratorRepository.findByEmailAndPassword(email, password)
-                .orElseThrow(() -> new RuntimeException("Invalid credentials"));
+                // .orElseThrow(() -> new RuntimeException("Invalid credentials"));
+                .orElse(null);
     }
 }

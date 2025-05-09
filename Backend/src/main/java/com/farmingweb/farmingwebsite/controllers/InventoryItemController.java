@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:5500")
 @RestController
 @RequestMapping("/api/inventoryitems")
 public class InventoryItemController {
@@ -18,6 +19,12 @@ public class InventoryItemController {
         return inventoryitemService.getAll();
     }
 
+    //Display and search
+    @GetMapping("/inventoryitems/search")
+    public List<InventoryItem> searchItems(@RequestParam String invitem) {
+        return inventoryitemService.searchByName(invitem);
+    }
+
     @PostMapping
     public InventoryItem create(@RequestBody InventoryItem obj) {
         return inventoryitemService.create(obj);
@@ -26,7 +33,7 @@ public class InventoryItemController {
     //     return inventoryitemService.save(item);
     // }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public void delete(@PathVariable Integer id) {
         inventoryitemService.delete(id);
     }

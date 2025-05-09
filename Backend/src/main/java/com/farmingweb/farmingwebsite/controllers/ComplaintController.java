@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:5500")
 @RestController
 @RequestMapping("/api/complaints")
 public class ComplaintController {
@@ -20,11 +21,11 @@ public class ComplaintController {
     }
 
     @PostMapping
-    public Complaint create(@RequestBody Complaint obj) {
-        return complaintService.create(obj);
+    public Complaint create(@RequestBody Complaint complaint) {
+        return complaintService.create(complaint);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public void delete(@PathVariable ComplaintId id) {
         complaintService.delete(id);
     }
