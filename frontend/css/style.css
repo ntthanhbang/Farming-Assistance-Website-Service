@@ -46,11 +46,11 @@ body {
 }
 /*LOGIN PICTURE FOR FARMER*/
 #farmer-login{
-    background: url('images/field_background.jfif') no-repeat center center/cover;
+    background: url('../images/field_background.jfif') no-repeat center center/cover;
 }
 /*BACKGROUND PICTURE FOR FARMER*/
 #farmer-background{
-    background: url('images/farmer.jfif') no-repeat center center/cover;
+    background: url('../images/farmer.jfif') no-repeat center center/cover;
 }
 /*FARMER TEXT*/
 #farmer-background span{
@@ -58,11 +58,11 @@ body {
 }
 /*LOGIN PICTURE FOR ADMIN*/
 #admin-login{
-    background: url('images/admin-login.jfif') no-repeat center center/cover;
+    background: url('../images/admin-login.jfif') no-repeat center center/cover;
 }
 /*BACKGROUND PICTURE FOR ADMIN*/
 #admin-background{
-    background: url('images/admin.jfif') no-repeat center center/cover;
+    background: url('../images/admin.jfif') no-repeat center center/cover;
 }
 /*ADMIN TEXT*/
 #admin-background span{
@@ -70,11 +70,11 @@ body {
 }
 /*LOGIN PICTURE FOR SUPPLIER*/
 #supplier-login{
-    background: url('images/supplier-login.jfif') no-repeat center center/cover;
+    background: url('../images/supplier-login.jfif') no-repeat center center/cover;
     }
 /*BACKGROUND PICTURE FOR SUPPLIER*/
 #supplier-background{
-    background: url('images/supp.jfif') no-repeat center center/cover;
+    background: url('../images/supp.jfif') no-repeat center center/cover;
 }
 /*SUPPLIER TEXT*/
 #supplier-background span{
