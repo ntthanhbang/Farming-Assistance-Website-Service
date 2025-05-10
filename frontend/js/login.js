@@ -28,3 +28,36 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("login-form-admin");
+
+    form.addEventListener("submit", async function (e) {
+        e.preventDefault(); // prevent default form action
+
+        const email = document.getElementById("admin-email").value;
+        const password = document.getElementById("admin-password").value;
+
+        try {
+            const response = await fetch("http://localhost:8081/api/administrators/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    email: email,
+                    password: password
+                })
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                alert("Admin login successful!");
+                window.location.href = "homePageAdmin.html";
+            } else {
+                alert("Invalid admin credentials. Try again.");
+            }
+        } catch (err) {
+            alert("Error connecting to server.");
+            console.error(err);
+        }
+    });
+});
