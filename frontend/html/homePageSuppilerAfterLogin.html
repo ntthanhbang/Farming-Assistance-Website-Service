@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- <meta charset="UTF-8">
+        <link rel="stylesheet" href="homePage.css">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+        <meta name="description" content="Farming assistance website">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet"> -->
+
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Farming assistance website">
+        <title>Farming Assistance</title>
+    
+        <link rel="stylesheet" href="../css/homePage.css">
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
+        <script src="../js/transaction.js"></script>
+    </head>
+
+    <body>
+         <div class="image-wrapper">
+            <img src="../images/PNG/FIcon.png" class="icon">
+         </div>
+
+         <div class="select-wrapper">
+            <a class="select-items-after-login" href="">Home</a>
+            <a class="select-items-after-login" href="">Contact</a>
+            <a class="select-items-after-login" href="homePage.html">LogOut</a>
+            <a class="select-items-after-login" href="">Message</a>
+         </div>
+
+         <div class="header-wrapper">
+            <h1 class="words">
+                FARMING-TO-TABLE GOODNESS
+            </h1>
+         </div>
+
+         <div class="work-wrapper">
+            <div class="work-header">
+                <div class="work-items">
+                    <div class = "workItemsLink"> Trasaction</div>
+                </div>
+                <div class="work-items">
+                    <div class = "workItemsLink"> Post advertisement</div> 
+                </div>
+                <div class="work-items">
+                    <div class = "workItemsLink"> Manage posted crops</div>
+                </div>
+            </div>
+
+            <div class="func" id="work-function"></div>
+         </div>
+
+        <script>
+            function showFunction(content) {
+            const func = document.getElementById('work-function');
+            func.style.position = 'relative';
+            func.style.display = 'block';
+            func.innerHTML = `
+                <div>${content}</div>
+                <div class="close-button" id="close-function">X</div>
+            `;
+
+            document.getElementById('close-function').addEventListener('click', function() {
+                func.style.display = 'none';
+            });
+            }
+
+            document.querySelectorAll('.workItemsLink').forEach((item, index) => {
+                item.addEventListener('click', function() {
+                    switch (index) {
+                        case 0: showFunction(`
+                        <div class="work-header transaction-section">
+                        <h2>Transaction Table</h2>
+              
+                        <div class="form-container">
+                            <input type="text" id="transactionId" placeholder="Transaction ID">
+                            <input type="text" id="transItemId" placeholder="Transaction Item ID"> <!-- NEW -->
+                            <input type="text" id="itemId" placeholder="Item ID">
+                            <input type="text" id="quantity" placeholder="Quantity">
+                            <input type="text" id="farmerId" placeholder="Farmer ID">
+                            <input type="text" id="supplierId" placeholder="Supplier ID">
+                            <input type="text" id="paymentStatus" placeholder="Payment Status">
+                            <input type="datetime-local" id="timestamp">
+                            <input type="text" id="paymentMethod" placeholder="Payment Method">
+                            <button onclick="addTransaction()">Add Transaction</button>
+                        </div>
+                  
+                        <table id="transactionTable">
+                            <thead>
+                                <tr>
+                                <th>Transaction ID</th>
+                                <th>Transaction Item ID</th> <!-- NEW -->
+                                <th>Item ID</th>
+                                <th>Quantity</th>
+                                <th>Farmer ID</th>
+                                <th>Supplier ID</th>
+                                <th>Payment Status</th>
+                                <th>TimeStamp</th>
+                                <th>Payment Method</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                <td>TX1001</td>
+                                <td>TI001</td> <!-- Example transItemID -->
+                                <td>ITEM001</td>
+                                <td>10</td>
+                                <td>F123</td>
+                                <td>S456</td>
+                                <td>Paid</td>
+                                <td>2024-06-01T10:32</td>
+                                <td>Credit Card</td>
+                              </tr>
+                            </tbody>
+                        </table>  
+                        </div>
+                        `);
+                        const datetime = document.getElementById("timestamp");
+                        function getLocalDateTime() {
+                            const now = new Date();
+                            const pad = n => n.toString().padStart(2, '0');
+
+                            const year = now.getFullYear();
+                            const month = pad(now.getMonth() + 1);
+                            const day = pad(now.getDate());
+                            const hours = pad(now.getHours());
+                            const minutes = pad(now.getMinutes());
+
+                        return `${year}-${month}-${day}T${hours}:${minutes}`;
+                        }
+
+                        datetime.setAttribute('min', getLocalDateTime());
+                            break;
+                        case 1: showFunction(`
+                            <div class="display" id="input-display">
+                            <div class="work-lefthalf">
+                                <img src="../images/PNG/add-cover.png" style="max-width: 100%; height: auto;"/>
+                                <input type="file" id="input-image" accept="image/*"/>
+                                <div id="circle">+</div>
+                            </div>
+                            <div class="work-righthalf">
+                                <input type="text" class="work-input" id="input-title" placeholder="Title" style="grid-column: 3 / 9; grid-row: 2 / 4; margin: 0px;" required/>
+                                <textarea type="text" class="work-input" placeholder="Content" style="grid-column: 3 / 9; grid-row: 5 / 11; overflow: auto; padding: 5px;"></textarea>
+                                <div style="display: flex; grid-column: 3 / 9; grid-row: 12 / 14;">
+                                    <div style="height: 100%; width: 40%; display: flex; justify-content: center; align-items: center; font-size: 1.3em;">Public date:</div>
+                                    <input class="work-input" type="date" name="Public date" id="public-date" style="right: 0px; width: 60%;" required/>
+                                </div>
+                                <button type="submit" id="post-button">Post</button>
+                            </div>
+                            </div>
+                        `); 
+                        document.getElementById('input-image').addEventListener('change', previewImage);
+                        const dateInput = document.getElementById('public-date');
+                        dateInput.setAttribute('min', new Date().toISOString().split('T')[0]);
+                        dateInput.addEventListener('focus', () => {
+                            dateInput.classList.remove('invalid');
+                        });
+                        dateInput.addEventListener('blur', () => {
+                            if (!dateInput.validity.valid)
+                            dateInput.classList.add('invalid');
+                        });
+
+                        const titleInput = document.getElementById('input-title');
+                        titleInput.addEventListener('focus', () => {
+                            titleInput.classList.remove('invalid');
+                        });
+                        titleInput.addEventListener('blur', () => {
+                            if (!titleInput.validity.valid)
+                            titleInput.classList.add('invalid');
+                        });
+
+                        const postButton = document.getElementById('post-button');
+                        postButton.addEventListener('mouseenter', () => {
+                            postButton.classList.add('active');
+                        });
+                        postButton.addEventListener('mousemove', (event) => {
+                            const rect = postButton.getBoundingClientRect();
+                            const x = event.clientX - rect.left;
+                            const y = event.clientY - rect.top;
+                            postButton.style.setProperty('--x', `${x}px`);
+                            postButton.style.setProperty('--y', `${y}px`);
+                        });
+                        postButton.addEventListener('mouseleave', () => {
+                            postButton.classList.remove('active');
+                            postButton.style.backgroundColor = 'rgba(190, 190, 190, 0.6)';
+                        });
+                            break;
+                        case 2: showFunction(`
+                            <div class="display" id="output-display">
+                                <div class="work-lefthalf style="flex-direction: column; flex: 1; overflow-y: auto;" id="ad-list"></div>
+                                <div class="work-righthalf" id="ad-content" style="min-height: 45vh;"></div>
+                            </div>
+                        `);
+
+                        fetchAdvertisements();
+                            break;
+                    }
+                });
+            });
+
+            function previewImage(event) {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                    const displayArea = document.getElementById('input-display');
+                    const existingImage = document.querySelector('.work-lefthalf img');
+                    displayArea.style.height = e.target.height;
+                    existingImage.style.transition = 'opacity 0.5s ease';
+                    existingImage.style.opacity = 0;
+
+                    setTimeout(() => {
+                        const img = new Image();
+                        img.src = e.target.result;
+                        img.onload = function() {
+                            displayArea.style.backgroundImage = `url(${img.src})`;
+                            displayArea.style.backgroundSize = 'cover';
+                            displayArea.style.backgroundPosition = 'center';
+                            displayArea.style.width = '100%';
+                            const aspectRatio = img.height / img.width;
+                            displayArea.style.height = `${displayArea.offsetWidth * aspectRatio}px`;
+                        };
+                    });
+                    };
+                    reader.readAsDataURL(file);
+                }
+            }
+
+            const mockAdvertisements = [
+            {
+                AdID: "1",
+                Title: "Ad 1",
+                Content: "This is the content for advertisement 1.",
+                PublicDate: "2023-04-01",
+                ExpiryDate: "2025-05-28",
+                Status: "active",
+                cover_image_url: "gettyimages-1246951746_web.webp"
+            },
+            {
+                AdID: "2",
+                Title: "Ad 2",
+                Content: "This is the content for advertisement 2.",
+                PublicDate: "2023-04-05",
+                ExpiryDate: "2025-03-30",
+                Status: "inactive",
+                cover_image_url: "harp_seal_pup_shutterstock_142780513_credited-scaled.webp"
+            }
+        ];
+            async function fetchAdvertisements() {
+                const adList = document.getElementById("ad-list");
+                adList.innerHTML = ``;
+
+                mockAdvertisements.forEach((ad) => {
+                    const adItem = document.createElement("div");
+                    adItem.innerText = ad.AdID;
+                    adItem.classList.add("ad-item");
+                    adItem.onclick = () => displayAdContent(ad);
+                    adList.appendChild(adItem);
+                });
+            }
+            function displayAdContent(ad) {
+                const adContent = document.getElementById('ad-content');
+                adContent.innerHTML = `
+                    <h2 class="work-output" id="output-title" style="grid-column: 3 / 9; grid-row: 2 / 4; margin: 5px; display: flex; justify-content: center; align-items: center;">${ad.Title}</h2>
+                    <p class="work-output" id="output-content" style="grid-column: 2 / 7; grid-row: 5 / 16; overflow: auto;">${ad.Content}</p>
+                    <fieldset class="work-output" style="grid-column: 8 / 10; grid-row: 5 / 7;">
+                        <legend>Public date</legend>
+                        <p id="output-public" style="margin: 0;">${ad.PublicDate}</p>
+                    </fieldset>
+                    <fieldset class="work-output" style="grid-column: 8 / 10; grid-row: 8 / 10;">
+                        <legend>Expiry date</legend>
+                        <p id="output-expiry" style="margin: 0;">${ad.ExpiryDate}</p>
+                    </fieldset>
+                    <fieldset class="work-output" style="grid-column: 8 / 10; grid-row: 11 / 13;">
+                        <legend>Status</legend>
+                        <p id="output-status" style="margin: 0;">${ad.Status}</p>
+                    </fieldset>
+                    <div id="status-toggle" style="position: relative; grid-column: 9 / 10; grid-row: 14 / 15; display: flex; justify-content: center; align-items: center;">
+                        <div id="status-bar" style="border-radius: 10px; height: 60%; width: 80%;"></div>
+                        <div id="status-button" style="position: absolute; border-radius: 5px; height: 80%; width: 50%; left: ${ad.Status === 'active' ? '50%' : '0'}; background-color: lightgray;"></div>
+                    </div>
+                `;
+                /*Photo for advertisement, try to remove comment sign to take a look*/
+                /* const displayArea = document.getElementById('output-display');
+                const img = new Image();
+                img.src = ad.cover_image_url;
+                img.onload = function() {
+                    displayArea.style.backgroundImage = `url(${img.src})`;
+                    displayArea.style.backgroundSize = 'cover';
+                    displayArea.style.backgroundPosition = 'center';
+                    displayArea.style.width = '100%';
+                    const aspectRatio = img.height / img.width;
+                    displayArea.style.height = `${displayArea.offsetWidth * aspectRatio}px`;
+                }; */
+
+                const currentDate = new Date();
+                const expiryDate = new Date(ad.ExpiryDate);
+                if (currentDate < expiryDate) {
+                    document.getElementById('status-bar').style.backgroundColor = ad.Status === 'active' ? 'green' : 'red';
+                    document.getElementById('status-toggle').addEventListener('click', () => {
+                        ad.Status = ad.Status === 'active' ? 'inactive' : 'active';
+                        document.getElementById('output-status').innerText = ad.Status;
+                        document.getElementById('status-bar').style.backgroundColor = ad.Status === 'active' ? 'green' : 'red';
+                        document.getElementById('status-button').style.left = ad.Status === 'active' ? '50%' : '0';
+                    });
+                } else {
+                    document.getElementById('status-bar').style.backgroundColor = 'gray';
+                    document.getElementById('status-button').style.cursor = 'not-allowed';
+                }
+            } 
+        </script>
+         
+
+         <div class="contact-wrapper">
+            <div class="contact-items-image">
+                <img src="../images/JFIF/contact.jfif" class="image-size"/>
+            </div>
+            <div class="contact-items-input">
+                <div class="contact-header">
+                    Fresh, Healthy and Delicious
+                </div>
+
+                <br> 
+
+                <div>
+                    <input type="text" class="contact-input" placeholder="Enter your first name">
+                    <input type="text" class="contact-input" placeholder="Enter your last name">
+                </div>
+
+                <br>
+
+                <div>
+                    <input type="text" class="contact-input" placeholder="Enter your email">
+                    <input type="text" class="contact-input" placeholder="Enter your number">
+                </div>
+
+                <br>
+
+                <div>
+                    <input type="text" class="contact-message" placeholder="Message">
+                </div>
+
+                <br>
+
+                <button class="button">
+                    Submit
+                </button>
+            </div>
+         </div>
+
+         <footer class="footer">
+            <p>&copy; 2025 Farming Assistance. All rights reserved.</p>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- <meta charset="UTF-8">
+        <link rel="stylesheet" href="homePage.css">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+        <meta name="description" content="Farming assistance website">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet"> -->
+
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Farming assistance website">
+        <title>Farming Assistance</title>
+    
+        <link rel="stylesheet" href="../css/homePage.css">
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body>
+         <div class="image-wrapper">
+            <img src="../images/PNG/FIcon.png" class="icon">
+         </div>
+
+         <div class="select-wrapper">
+            <a class="select-items-after-login" href="">Home</a>
+            <a class="select-items-after-login" href="">Contact</a>
+            <a class="select-items-after-login" href="">LogOut</a>
+         </div>
+
+         <div class="header-wrapper">
+            <h1 class="words">
+                FARMING-TO-TABLE GOODNESS
+            </h1>
+         </div>
+
+         <div class="work-wrapper">
+            <div class="work-header">
+                <div class="work-items">
+                    <a class = "workItemsLink" href = "viewComplaints.html" target ="_self">View complaints</a>
+                </div>
+                <div class="work-items">
+                    <a class = "workItemsLink" href = "sellBoards.html" target ="_self">Sell boards</a> 
+                </div>
+                <div class="work-items">
+                    <a class = "workItemsLink" href = "accountManagement.html" target ="_self">Accounts management</a> 
+                </div>
+            </div>
+
+            <!-- YOUR CODE IS HERE -->
+             
+         </div>
+
+         <div class="viewComplaints-container">
+            <div class="viewComplaints-header">
+                <h1>List of Complaints</h1>
+            </div>
+
+                <table class="viewComplaints-list">
+                    <thead>
+                        <tr>
+                            <th>ComplaintID</th>
+                            <th>Date of Complaint</th>
+                            <th>Type</th>
+                            <th>ComplaintDetails</th>
+                            <th>FarmerID</th>
+                            <th>Status</th>
+                            <th class="viewComplaints-list-last">Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>13/2/2025</td>
+                            <td>Grain Crops</td>
+                            <td>There is no wheat left</td>
+                            <td>1001</td>
+                            <td>UNRESOLVED</td>
+                            <td class="viewComplaints-list-last">
+                                <div class="context-menu-container">
+                                    <ul class="dropbtn icons showLeft">
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+
+                                    <div class="dropdown-content">
+                                        <a href="#">Option 1</a>
+                                        <a href="#">Option 2</a>
+                                        <a href="#">Option 3</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>2</td>
+                            <td>3/3/2025</td>
+                            <td>Vegetables Crops</td>
+                            <td>The carrots I got were rotten</td>
+                            <td>2242</td>
+                            <td>DONE</td>
+                            <td class="viewComplaints-list-last">
+                                <div class="context-menu-container">
+                                    <ul class="dropbtn icons showLeft">
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+
+                                    <div class="dropdown-content">
+                                        <a href="#">Option 1</a>
+                                        <a href="#">Option 2</a>
+                                        <a href="#">Option 3</a>
+                                    </div>
+                                </div>
+                            </td>                      
+                        </tr>
+
+                        <tr>
+                            <td>3</td>
+                            <td>23/1/2025</td>
+                            <td>Fiber Crops</td>
+                            <td>blah blah blah idk lol</td>
+                            <td>3624</td>
+                            <td>UNRESOLVED</td>
+                            <td class="viewComplaints-list-last">
+                                <div class="context-menu-container">
+                                    <ul class="dropbtn icons showLeft">
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+
+                                    <div class="dropdown-content">
+                                        <a href="#">Option 1</a>
+                                        <a href="#">Option 2</a>
+                                        <a href="#">Option 3</a>
+                                    </div>
+                                </div>
+                            </td>                        
+                        </tr>
+
+                        <tr>
+                            <td>4</td>
+                            <td>11/7/2025</td>
+                            <td>Crops</td>
+                            <td>blah blah blah idk lol</td>
+                            <td>4246</td>
+                            <td>DONE</td>
+                            <td class="viewComplaints-list-last">
+                                <div class="context-menu-container">
+                                    <ul class="dropbtn icons showLeft">
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+
+                                    <div class="dropdown-content">
+                                        <a href="#">Option 1</a>
+                                        <a href="#">Option 2</a>
+                                        <a href="#">Option 3</a>
+                                    </div>
+                                </div>
+                            </td>                        
+                        </tr>
+
+                        <tr>
+                            <td>5</td>
+                            <td>22/12/2024</td>
+                            <td>Crops</td>
+                            <td>blah blah blah idk lol</td>
+                            <td>5245</td>
+                            <td>UNRESOLVED</td>
+                            <td class="viewComplaints-list-last">
+                                <div class="context-menu-container">
+                                    <ul class="dropbtn icons showLeft">
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+
+                                    <div class="dropdown-content">
+                                        <a href="#">Option 1</a>
+                                        <a href="#">Option 2</a>
+                                        <a href="#">Option 3</a>
+                                    </div>
+                                </div>
+                            </td>                       
+                         </tr>
+                    </tbody>
+                </table>
+            
+
+         </div>
+
+         <script>
+            function showDropdown(event){
+                event.stopPropagation();
+
+                document.querySelectorAll('.dropdown-content').forEach(dropdown => {
+                    dropdown.classList.remove('show');
+                });
+
+                const dropdown = event.currentTarget.nextElementSibling;
+                dropdown.classList.toggle('show');
+            }
+
+            // window.onclick = function(event) {
+            //         if (!event.target.matches('.dropbtn')) {
+            //             var dropdowns = document.getElementsByClassName("dropdown-content");
+            //             var i;
+            //             for (i = 0; i < dropdowns.length; i++) {
+            //                 var openDropdown = dropdowns[i];
+            //                 if (openDropdown.classList.contains('show')) {
+            //                     openDropdown.classList.remove('show');
+            //                 }
+            //             }
+            //         }
+            //     }
+            window.addEventListener('click', function () {
+                document.querySelectorAll('.dropdown-content').forEach(dropdown => {
+                dropdown.classList.remove('show');
+                });
+            });
+
+    // Add event listeners to all action buttons
+            document.querySelectorAll('.dropbtn').forEach(btn => {
+            btn.addEventListener('click', showDropdown);
+    });
+                
+         </script>
+
+         <footer class="footer">
+            <p>&copy; 2025 Farming Assistance. All rights reserved.</p>
+        </footer>
+    </body>
+</html>

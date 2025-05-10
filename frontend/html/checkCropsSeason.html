@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- <meta charset="UTF-8">
+        <link rel="stylesheet" href="homePage.css">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+        <meta name="description" content="Farming assistance website">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet"> -->
+
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Farming assistance website">
+        <title>Farming Assistance</title>
+    
+        <link rel="stylesheet" href="../css/homePage.css">
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+
+    <body>
+         <div class="image-wrapper">
+            <img src="../images/PNG/FIcon.png" class="icon">
+         </div>
+
+         <div class="select-wrapper">
+            <a class="select-items-after-login" href="homePageFarmer.html">Home</a>
+            <a class="select-items-after-login" href="">Contact</a>
+            <a class="select-items-after-login" href="">LogOut</a>
+         </div>
+
+         <div class="header-wrapper">
+            <h1 class="words">
+                FARMING-TO-TABLE GOODNESS
+            </h1>
+         </div>
+
+         <div class="work-wrapper">
+            <div class="work-header">
+                <div class="work-items">
+                    <a class = "workItemsLink" href = "sellCrops.html" target ="_self"> Sell crops</a>
+                </div>
+                <div class="work-items">
+                    <a class = "workItemsLink" href = "checkCropsSeason.html" target ="_self"> Check crops season</a> 
+                </div>
+                <div class="work-items">
+                    <a class = "workItemsLink" href = "farmerTips.html" target ="_self"> Tips for farmer</a>
+                </div>
+                <div class="work-items">
+                    <a class = "workItemsLink" href = "soldCrops.html" target ="_self"> View sold crops</a>
+                </div>
+            </div>
+
+            <br>
+            
+            <!-- YOUR CODE IS HERE -->
+            <div class="table-wrapper">
+                <div class="table-container">
+               
+               <div class="check-crop-header">         
+                   <h2>Check crop season</h2>
+                       <div class="square-wrapper">
+                           <div class="square-container">
+                               <div class="square" id="planting"> 
+                                   </div>
+                               <span>Planting period.</span>
+                           </div>
+                           <div class="square-container">
+                               <div class="square" id="harvesting">   
+                                   </div>
+                               <span>Harvesting period.</span>
+                           </div>
+                       </div>
+               </div>
+       
+                <table class="content-table">
+                   <thead>
+                       <tr>
+                           <th class="table-header"> Crops \ Months </th>
+                           <th> January </th>
+                           <th> February </th>
+                           <th> March </th>
+                           <th> April </th>
+                           <th> May </th>
+                           <th> June </th>
+                           <th> July </th>
+                           <th> August </th>
+                           <th> September </th>
+                           <th> October </th>
+                           <th> November </th>
+                           <th> December </th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                       <tr>
+                           <td>
+                               <div class="crop-header">
+                                <span class="crop-name">Corn</span>
+                                <br>   
+                                <img src="../images/JFIF/corn.jfif" class="crop-img" id="crop-corn-img">
+                                   <div>
+                                       <button class="crop-info">
+                                           <i class="fa-solid fa-circle-info"></i>
+                                           <span>Crop Info</span>
+                                       </button>
+                                   </div>
+                               </div>
+                           </td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td class="planting-cell" title="1/5"></td> <!--Plant in May-->
+                           <td class="planting-cell" title="1/5"></td>
+                           <td></td>
+                           <td class="harvesting-cell"></td> <!--Harvest in August-->
+                           <td class="harvesting-cell"></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                       </tr>
+                       <tr>
+                           <td>
+                               <div class="crop-header">
+                               <span class="crop-name">Rice</span>
+                               <br>   
+                               <img src="../images/JFIF/rice.jfif" class="crop-img" id="crop-corn-img">
+                                  <div>
+                                      <button class="crop-info">
+                                          <i class="fa-solid fa-circle-info"></i>
+                                          <span>Crop Info</span>
+                                      </button>
+                                  </div>
+                              </div>
+                           </td>
+                           <td class="planting-cell"></td> <!--Plant in January-->
+                           <td class="planting-cell"></td>
+                           <td></td>
+                           <td class="harvesting-cell"></td> <!--Harvest in April-->
+                           <td class="harvesting-cell"></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td class="planting-cell"></td>
+                       </tr>
+                       <tr>
+                           <td>
+                               <div class="crop-header">
+                                   <span class="crop-name">Peanut</span> 
+                                   <br>  
+                                   <img src="../images/JFIF/peanut.jfif" class="crop-img" id="crop-corn-img">
+                                      <div>
+                                          <button class="crop-info">
+                                              <i class="fa-solid fa-circle-info"></i>
+                                              <span>Crop Info</span>
+                                          </button>
+                                      </div>
+                               </div>
+                           </td>
+                           <td></td>
+                           <td></td>
+                           <td class="harvesting-cell"></td>
+                           <td class="harvesting-cell"></td>
+                           <td></td>
+                           <td class="planting-cell"></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td class="harvesting-cell"></td>
+                           <td class="harvesting-cell"></td>
+                           <td class="planting-cell"></td>
+                       </tr>
+                       <tr>
+                           <td>
+                               <div class="crop-header">
+                                   <span class="crop-name">Soybean</span> 
+                                   <br>  
+                                   <img src="../images/JFIF/soybean.jfif" class="crop-img" id="crop-corn-img">
+                                      <div>
+                                          <button class="crop-info">
+                                              <i class="fa-solid fa-circle-info"></i>
+                                              <span>Crop Info</span>
+                                          </button>
+                                      </div>
+                               </div>
+                           </td>
+                           <td class="planting-cell"></td>
+                           <td class="planting-cell"></td>
+                           <td></td>
+                           <td class="harvesting-cell"></td>
+                           <td class="harvesting-cell"></td>
+                           <td class="harvesting-cell"></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                       </tr>
+                   </tbody>
+                </table>
+        </div> 
+        
+
+        </div>
+    </div>
+
+         <footer class="footer">
+            <p>&copy; 2025 Farming Assistance. All rights reserved.</p>
+        </footer>
+    </body>
+</html>
