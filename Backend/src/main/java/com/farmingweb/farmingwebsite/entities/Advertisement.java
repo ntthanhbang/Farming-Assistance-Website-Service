@@ -5,14 +5,23 @@ import lombok.Data;
 
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Data
 @Table(name = "Advertisements")
+@IdClass(AdvertisementId.class)
 public class Advertisement {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "AdID")
     private Integer adID;
+
+    @Id
+    @ManyToOne
+    @JoinColumn(name = "SupplierID")
+    @JsonIgnore
+    private Supplier supplier;
 
     @Column(name = "Title", nullable = false)
     private String title;
@@ -23,7 +32,7 @@ public class Advertisement {
     @Column(name = "Timestamp")
     private LocalDateTime timestamp;
 
-    @ManyToOne
-    @JoinColumn(name = "SupplierID", referencedColumnName = "SupplierID")
-    private Supplier supplier;
+    @OneToOne(mappedBy = "advertisement")
+    @JsonIgnore
+    private Notification notification;
 }

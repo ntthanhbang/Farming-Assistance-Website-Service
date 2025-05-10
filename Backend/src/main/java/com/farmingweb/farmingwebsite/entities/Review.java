@@ -1,5 +1,7 @@
 package com.farmingweb.farmingwebsite.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -9,15 +11,27 @@ import lombok.Data;
 @Table(name = "Review")
 public class Review {
     @Id
-    @ManyToOne
-    @JoinColumns({
-        @JoinColumn(name = "ComplaintID", referencedColumnName = "ComplaintID"),
-        @JoinColumn(name = "FarmerID", referencedColumnName = "FarmerID")
-    })
-    private Complaint complaint;
+    @Column(name = "ComplaintID")
+    private int complaintID;
 
     @Id
+    @Column(name = "FarmerID", length = 8)
+    private String farmerID;
+
+    @Id
+    @Column(name = "AdminID", length = 8)
+    private String adminID;
+
     @ManyToOne
-    @JoinColumn(name = "AdminID", referencedColumnName = "AdminID")
-    private Administrator administrator;
+    @JoinColumns({
+        @JoinColumn(name = "ComplaintID", referencedColumnName = "ComplaintID", insertable = false, updatable = false),
+        @JoinColumn(name = "FarmerID", referencedColumnName = "FarmerID", insertable = false, updatable = false)
+    })
+    @JsonIgnore
+    private Complaint complaint;
+
+    @ManyToOne
+    @JoinColumn(name = "AdminID", referencedColumnName = "AdminID", insertable = false, updatable = false)
+    @JsonIgnore
+    private Administrator admin;
 }

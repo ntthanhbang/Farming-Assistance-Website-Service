@@ -1,5 +1,9 @@
 package com.farmingweb.farmingwebsite.entities;
 
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -22,4 +26,8 @@ public class Administrator {
 
     @Column(name = "Email", nullable = false)
     private String email;
+
+    @OneToMany(mappedBy = "admin")
+    @JsonIgnore
+    private List<Review> reviews;
 }

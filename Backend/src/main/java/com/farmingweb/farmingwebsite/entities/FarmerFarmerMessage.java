@@ -1,6 +1,7 @@
 package com.farmingweb.farmingwebsite.entities;
 
 import com.farmingweb.farmingwebsite.enums.MessageStatus;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -18,14 +19,12 @@ public class FarmerFarmerMessage {
     private int ffMessageID;
 
     @Id
-    @ManyToOne
-    @JoinColumn(name = "Farmer1ID", referencedColumnName = "FarmerID")
-    private Farmer farmer1;
+    @Column(name = "Farmer1ID", length = 8)
+    private String farmer1ID;
 
     @Id
-    @ManyToOne 
-    @JoinColumn(name = "Farmer2ID", referencedColumnName = "FarmerID")
-    private Farmer farmer2;
+    @Column(name = "Farmer2ID", length = 8)
+    private String farmer2ID;
 
     @Column(name = "Content", nullable = false, columnDefinition = "TEXT")
     private String content;
@@ -36,4 +35,14 @@ public class FarmerFarmerMessage {
 
     @Column(name = "Timestamp")
     private LocalDateTime timestamp;
+
+    @ManyToOne
+    @JoinColumn(name = "Farmer1ID", insertable = false, updatable = false)
+    @JsonIgnore
+    private Farmer send;
+
+    @ManyToOne 
+    @JoinColumn(name = "Farmer2ID", insertable = false, updatable = false)
+    @JsonIgnore
+    private Farmer recieve;
 }

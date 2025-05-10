@@ -1,12 +1,13 @@
 package com.farmingweb.farmingwebsite.entities;
 
 import com.farmingweb.farmingwebsite.enums.ComplaintStatus;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
-
+import java.util.List;
 
 @Entity
 @Data
@@ -20,7 +21,8 @@ public class Complaint {
 
     @Id
     @ManyToOne
-    @JoinColumn(name = "FarmerID", referencedColumnName = "FarmerID")
+    @JoinColumn(name = "FarmerID")
+    @JsonIgnore
     private Farmer farmer;
 
     @Column(name = "Subject", nullable = false, length = 200)
@@ -35,4 +37,8 @@ public class Complaint {
 
     @Column(name = "Timestamp")
     private LocalDateTime timestamp;
+
+    @OneToMany
+    @JsonIgnore
+    private List<Review> reviews;
 }

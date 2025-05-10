@@ -15,8 +15,13 @@ public class SupplierFarmerMessageId implements Serializable {
         if (this == o) return true;
         if (!(o instanceof SupplierFarmerMessageId)) return false;
         SupplierFarmerMessageId that = (SupplierFarmerMessageId) o;
-        return  Objects.equals(sfMessageID, that.sfMessageID) &&
+        return sfMessageID == that.sfMessageID &&
                 Objects.equals(farmerID, that.farmerID) &&
                 Objects.equals(supplierID, that.supplierID);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(sfMessageID, farmerID, supplierID);
     }
 }
