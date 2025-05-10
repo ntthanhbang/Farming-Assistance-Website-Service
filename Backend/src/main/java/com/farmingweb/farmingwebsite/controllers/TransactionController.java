@@ -2,6 +2,7 @@ package com.farmingweb.farmingwebsite.controllers;
 
 import com.farmingweb.farmingwebsite.entities.Transaction;
 import com.farmingweb.farmingwebsite.services.TransactionService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,9 +20,14 @@ public class TransactionController {
         return transactionService.getAll();
     }
 
-    @PostMapping
+    @GetMapping("/supplier/{supplierID}")
+    public List<Transaction> getBySupplier(@PathVariable String supplierID) {
+        return transactionService.getTransactionsBySupplier(supplierID);
+    }
+    
+    @PostMapping("/create")
     public Transaction create(@RequestBody Transaction transaction) {
-        return transactionService.create(transaction);
+        return transactionService.createTransaction(transaction);
     }
 
     @DeleteMapping("/{id}")
