@@ -8,20 +8,20 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .then(data => {
             const tableBody = document.getElementById("advertisement-table-body");
-            tableBody.innerHTML = ""; // Clear existing content
+            tableBody.innerHTML = ""; // Clear existing rows
 
             data.forEach(ad => {
                 const row = document.createElement("tr");
 
                 row.innerHTML = `
-                    <td>${ad.advertisementId.transactionId}</td>
-                    <td>${ad.advertisementId.transactionItemId}</td>
+                    <td>${ad.advertisementId?.transactionId ?? ''}</td>
+                    <td>${ad.advertisementId?.transactionItemId ?? ''}</td>
                     <td>${ad.itemId}</td>
                     <td>${ad.quantity}</td>
                     <td>${ad.farmerId}</td>
                     <td>${ad.supplierId}</td>
                     <td>${ad.paymentStatus}</td>
-                    <td>${ad.timestamp}</td>
+                    <td>${new Date(ad.timestamp).toLocaleString()}</td>
                     <td>${ad.paymentMethod}</td>
                 `;
 

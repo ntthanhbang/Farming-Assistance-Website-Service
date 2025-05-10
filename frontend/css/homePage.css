@@ -429,6 +429,29 @@ input{
     transform: scale(1.025);
 }
 
+.notification-wrapper {
+    margin: 20px;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+}
+
+.notification-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.notification-table th,
+.notification-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+.notification-table th {
+    background-color: #e0e0e0;
+}
+
 /*sellCrops.html*/
 
 .sell-outerwrapper{
