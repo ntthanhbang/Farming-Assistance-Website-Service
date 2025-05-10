@@ -61,3 +61,33 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("login-form-supplier");
+
+    form.addEventListener("submit", async function (e) {
+        e.preventDefault(); // prevent default form action
+
+        const email = document.getElementById("supplier-email").value;
+        const password = document.getElementById("supplier-password").value;
+
+        try {
+            const response = await fetch("http://localhost:8081/api/suppliers/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email, password })
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                alert("Supplier login successful!");
+                window.location.href = "homePageSuppilerAfterLogin.html"; // change if needed
+            } else {
+                alert("Invalid supplier credentials. Try again.");
+            }
+        } catch (err) {
+            alert("Error connecting to server.");
+            console.error(err);
+        }
+    });
+});

@@ -110,14 +110,27 @@ body{
 .select-wrapper{
     display: flex;
     flex-direction: row;
-    width: 400px;
+    width: 600px;
     height:auto;
     position: relative;
     justify-content: space-between;
-    left: 1099px;
+    left: 900px;
     bottom: 220px;
     font-size: 30px;
     
+}
+
+.select-wrapper-home{
+    display: flex;
+    flex-direction: row;
+    width: 600px;
+    height:auto;
+    position: relative;
+    justify-content: center;
+    column-gap: 50px;
+    left: 950px;
+    bottom: 230px;
+    font-size: 30px;
 }
 
 /* .select-items{
