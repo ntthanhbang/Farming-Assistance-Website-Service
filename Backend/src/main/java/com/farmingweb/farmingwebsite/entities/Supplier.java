@@ -13,7 +13,7 @@ import lombok.Data;
 public class Supplier {
     @Id
     @Column(name = "SupplierID", nullable = false, length = 8)
-    private String farmerID;
+    private String supplierID;
 
     @Column(name = "Name", nullable = false)
     private String name;
