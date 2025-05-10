@@ -3,6 +3,7 @@ package com.farmingweb.farmingwebsite.controllers;
 import com.farmingweb.farmingwebsite.entities.SupplierFarmerMessage;
 import com.farmingweb.farmingwebsite.entities.SupplierFarmerMessageId;
 import com.farmingweb.farmingwebsite.services.SupplierFarmerMessageService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,5 +29,19 @@ public class SupplierFarmerMessageController {
     @DeleteMapping("/{id}")
     public void delete(@PathVariable SupplierFarmerMessageId id) {
         supplierfarmermessageService.delete(id);
+    }
+
+    //Get messages
+    @GetMapping("/{supplierID}/{farmerID}")
+    public List<SupplierFarmerMessage> getMessagesBetween(
+            @PathVariable String supplierID,
+            @PathVariable String farmerID) {
+        return supplierfarmermessageService.getMessagesBetween(supplierID, farmerID);
+    }
+
+    //Get chats
+    @GetMapping("/farmers/{supplierID}")
+    public List<String> getConnectedFarmers(@PathVariable String supplierID) {
+        return supplierfarmermessageService.getConnectedFarmerIDs(supplierID);
     }
 }
