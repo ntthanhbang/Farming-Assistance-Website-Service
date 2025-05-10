@@ -1,7 +1,6 @@
 package com.farmingweb.farmingwebsite.controllers;
 
 import com.farmingweb.farmingwebsite.entities.Transaction;
-import com.farmingweb.farmingwebsite.entities.TransactionId;
 import com.farmingweb.farmingwebsite.services.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -26,7 +25,7 @@ public class TransactionController {
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable TransactionId id) {
+    public void delete(@PathVariable Integer id) {
         transactionService.delete(id);
     }
 }

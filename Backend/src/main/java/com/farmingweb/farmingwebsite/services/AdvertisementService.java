@@ -1,6 +1,7 @@
 package com.farmingweb.farmingwebsite.services;
 
 import com.farmingweb.farmingwebsite.entities.Advertisement;
+import com.farmingweb.farmingwebsite.entities.AdvertisementId;
 import com.farmingweb.farmingwebsite.repositories.AdvertisementRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +21,7 @@ public class AdvertisementService {
         return advertisementRepository.save(obj);
     }
 
-    public void delete(Long id) {
+    public void delete(AdvertisementId id) {
         advertisementRepository.deleteById(id);
     }
 }

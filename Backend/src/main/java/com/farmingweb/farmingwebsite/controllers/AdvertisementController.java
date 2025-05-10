@@ -1,6 +1,7 @@
 package com.farmingweb.farmingwebsite.controllers;
 
 import com.farmingweb.farmingwebsite.entities.Advertisement;
+import com.farmingweb.farmingwebsite.entities.AdvertisementId;
 import com.farmingweb.farmingwebsite.services.AdvertisementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -25,7 +26,7 @@ public class AdvertisementController {
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
+    public void delete(@PathVariable AdvertisementId id) {
         advertisementService.delete(id);
     }
 }
