@@ -47,7 +47,7 @@
                     <a class = "workItemsLink" href = "sellCrops.html" target ="_self"> Sell crops</a>
                 </div>
                 <div class="work-items">
-                    <a class = "workItemsLink" href = "checkCropsSeason.html" target ="_self"> Check crops season</a> 
+                    <a class = "workItemsLink" href = "notification.html" target ="_self">Notification</a> 
                 </div>
                 <div class="work-items">
                     <a class = "workItemsLink" href = "farmerTips.html" target ="_self"> Tips for farmer</a>
@@ -75,24 +75,16 @@
                     <table class="soldCrops-croplist">
                         <thead>
                             <tr>
-                                <th>Crop Name</th>
-                                <th>Crop ID</th>
-                                <th>Price</th>
-                                <th>Quantity</th>
-                                <th>Type</th>
-                                <th>Status</th>
-                                <th>Action</th>
+                                <th>itemID</th>
+                                <th>name</th>
+                                <th>description</th>
+                                <th>quantityAvailable</th>
+                                <th>price</th>
                             </tr>
                         </thead>
         
-                        <tbody>
-                                <td><img src="../images/JFIF/corn.JFIF" class="soldCrops-avatar">Corn</td>
-                                <td>#111111</td>
-                                <td>$12.00</td>
-                                <td>5kg</td>
-                                <td>Grains</td>
-                                <td><span class="status sale">On Sale</span></td>
-                                <td><button class="soldCrops-cellAction">⋮</button></td>
+                        <tbody id="crop-table-body">
+                            <!-- Dynamic rows go here -->
                         </tbody>
                     </table>
                 
@@ -116,5 +108,7 @@
          <footer class="footer">
             <p>&copy; 2025 Farming Assistance. All rights reserved.</p>
         </footer>
+
+        <script src="../js/loadInventoryItems.js"></script>
     </body>
 </html>
