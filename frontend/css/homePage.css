@@ -1,5 +1,5 @@
 body{
-    background-image: url(../betterBG.jpg);
+    background-image: url(../images/JPG/betterBG.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -419,7 +419,7 @@ input{
 /*sellCrops.html*/
 
 .sell-outerwrapper{
-    background: url(images/crops.jpg) no-repeat center;
+    background: url(../images/JPG/backG.jpg) no-repeat center;
     background-size: cover;
     position: relative;
     margin-bottom: -50px;

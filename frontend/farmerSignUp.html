@@ -25,7 +25,7 @@
                 <input type="password" name="password" id="password" 
                 pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,15}$"
                 placeholder="* Password" required />
-                <img src="closeEye.png" id="togglePass" />
+                <img src="images/PNG/closeEye.png" id="togglePass" />
             </div>
 
             <ul id="passwordRequirement" style="color: #e13c00">
@@ -93,7 +93,7 @@
                 togglePassword.addEventListener('click', () => {
                     const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
                     passwordInput.setAttribute('type', type);
-                    togglePassword.src = type === 'password' ? 'closeEye.png' : 'openEye.png';
+                    togglePassword.src = type === 'password' ? 'images/PNG/closeEye.png' : 'images/PNG/openEye.png';
                 });
             </script>
         </div>
@@ -103,14 +103,14 @@
                 <div id="whiteSection"></div>
                 <div id="upperPhoto" 
                 style="background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.5) 40%, rgba(255, 255, 255, 0) 50%),
-                url('Farmer.png');"></div>
+                url('images/PNG/Farmer.png');"></div>
             </div>
             <div id="lowerBackground">
                 <h1 id="lowerTitle">Or you will may to be&nbsp;<a href="brokerSignUp.html">broker</a></h1>
                 <div id="whiteSection"></div>
                 <div id="lowerPhoto" 
                 style="background-image: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.5) 40%, rgba(255, 255, 255, 0) 50%),
-                url('Broker.png');"></div>
+                url('images/PNG/Broker.png');"></div>
             </div>
         </div>
     </body>
