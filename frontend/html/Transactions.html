@@ -32,7 +32,7 @@
          <div class="select-wrapper">
             <a class="select-items-after-login" href="">Home</a>
             <a class="select-items-after-login" href="">Contact</a>
-            <a class="select-items-after-login" href="">LogOut</a>
+            <a class="select-items-after-login" href="homePage.html">LogOut</a>
          </div>
 
          <div class="header-wrapper">
@@ -55,36 +55,41 @@
             </div>
 
             <!-- YOUR CODE IS HERE -->
-             <div class="viewComplaints-container">
-            <div class="viewComplaints-header">
-                <h1>List of Complaints</h1>
-            </div>
-
-                <table class="viewComplaints-list">
+            <div class="sellBoards-container">
+                <div class="sellBoards-header">
+                    <h1>List of Transactions</h1>
+                </div>
+                
+                <table class="sellBoards-list">
                     <thead>
                         <tr>
-                            <th>ComplaintID</th>
-                            <th>subject</th>
-                            <th>content</th>
-                            <th>status</th>
-                            <th>timestamp</th>
+                            <th>Transaction ID</th>
+                            <th>Transaction Item ID</th> 
+                            <th>Item ID</th>
+                            <th>Quantity</th>
+                            <th>Farmer ID</th>
+                            <th>Supplier ID</th>
+                            <th>Payment Status</th>
+                            <th>TimeStamp</th>
+                            <th>Payment Method</th>
                         </tr>
                     </thead>
-
-                    <tbody id="complaints-table-body">      
-                    </tbody>
+    
+                    <!-- <tbody id="advertisement-table-body"></tbody> -->
                 </table>
-            
-
-         </div>
+            </div>
          </div>
 
-         
+        
 
          <footer class="footer">
             <p>&copy; 2025 Farming Assistance. All rights reserved.</p>
         </footer>
 
-        <script src="../js/viewComplaints.js"></script>
+<<<<<<<< HEAD:frontend/TransactionBoard.html
+        <!-- <script src="js/adminSellBoard.js" defer></script> -->
+========
+        <script src="../js/adminSellBoard.js" defer></script>
+>>>>>>>> 27ae8fcc3b6a805f7905791de9c7d434c94f4a36:frontend/html/sellBoards.html
     </body>
 </html>
