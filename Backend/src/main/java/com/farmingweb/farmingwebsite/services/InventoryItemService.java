@@ -16,8 +16,8 @@ public class InventoryItemService {
         return inventoryitemRepository.findAll();
     }
 
-    public InventoryItem create(InventoryItem obj) {
-        return inventoryitemRepository.save(obj);
+    public InventoryItem create(InventoryItem invitem) {
+        return inventoryitemRepository.save(invitem);
     }
 
     public InventoryItem save(InventoryItem item) {

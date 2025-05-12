@@ -16,8 +16,8 @@ public class SupplierService {
         return supplierRepository.findAll();
     }
 
-    public Supplier create(Supplier obj) {
-        return supplierRepository.save(obj);
+    public Supplier create(Supplier supplier) {
+        return supplierRepository.save(supplier);
     }
 
     public void delete(String id) {

@@ -18,8 +18,8 @@ public class SupplierFarmerMessageService {
         return supplierfarmermessageRepository.findAll();
     }
 
-    public SupplierFarmerMessage create(SupplierFarmerMessage obj) {
-        return supplierfarmermessageRepository.save(obj);
+    public SupplierFarmerMessage create(SupplierFarmerMessage sfm) {
+        return supplierfarmermessageRepository.save(sfm);
     }
 
     public void delete(SupplierFarmerMessageId id) {

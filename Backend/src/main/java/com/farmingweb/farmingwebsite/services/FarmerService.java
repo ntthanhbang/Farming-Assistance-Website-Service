@@ -16,8 +16,8 @@ public class FarmerService {
         return farmerRepository.findAll();
     }
 
-    public Farmer create(Farmer obj) {
-        return farmerRepository.save(obj);
+    public Farmer create(Farmer farmer) {
+        return farmerRepository.save(farmer);
     }
 
     public void delete(String id) {

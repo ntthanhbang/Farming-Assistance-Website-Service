@@ -16,8 +16,8 @@ public class AdministratorService {
         return administratorRepository.findAll();
     }
 
-    public Administrator create(Administrator obj) {
-        return administratorRepository.save(obj);
+    public Administrator create(Administrator admin) {
+        return administratorRepository.save(admin);
     }
 
     public void delete(String id) {

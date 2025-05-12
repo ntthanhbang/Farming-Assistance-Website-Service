@@ -17,8 +17,8 @@ public class FarmerFarmerMessageService {
         return farmerfarmermessageRepository.findAll();
     }
 
-    public FarmerFarmerMessage create(FarmerFarmerMessage obj) {
-        return farmerfarmermessageRepository.save(obj);
+    public FarmerFarmerMessage create(FarmerFarmerMessage ffm) {
+        return farmerfarmermessageRepository.save(ffm);
     }
 
     public void delete(FarmerFarmerMessageId id) {

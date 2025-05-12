@@ -17,8 +17,8 @@ public class TransactionItemService {
         return transactionitemRepository.findAll();
     }
 
-    public TransactionItem create(TransactionItem obj) {
-        return transactionitemRepository.save(obj);
+    public TransactionItem create(TransactionItem transitem) {
+        return transactionitemRepository.save(transitem);
     }
 
     public void delete(TransactionItemId id) {

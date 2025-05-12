@@ -1,7 +1,5 @@
 package com.farmingweb.farmingwebsite.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -27,11 +25,9 @@ public class Review {
         @JoinColumn(name = "ComplaintID", referencedColumnName = "ComplaintID", insertable = false, updatable = false),
         @JoinColumn(name = "FarmerID", referencedColumnName = "FarmerID", insertable = false, updatable = false)
     })
-    @JsonIgnore
     private Complaint complaint;
 
     @ManyToOne
     @JoinColumn(name = "AdminID", referencedColumnName = "AdminID", insertable = false, updatable = false)
-    @JsonIgnore
     private Administrator admin;
 }

@@ -20,8 +20,8 @@ public class NotificationService {
         return notificationRepository.findByFarmer_FarmerID(farmerID);
     }
     
-    public Notification create(Notification obj) {
-        return notificationRepository.save(obj);
+    public Notification create(Notification notif) {
+        return notificationRepository.save(notif);
     }
 
     public void delete(Integer id) {

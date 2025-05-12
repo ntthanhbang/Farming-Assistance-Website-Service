@@ -22,7 +22,7 @@ public class ReviewController {
 
     @PostMapping
     public Review create(@RequestBody Review review) {
-        return reviewService.create(review);
+        return reviewService.saveReview(review);
     }
 
     @DeleteMapping("/{id}")
