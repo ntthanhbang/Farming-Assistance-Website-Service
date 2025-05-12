@@ -13,7 +13,6 @@ import java.time.LocalDateTime;
 @IdClass(FarmerFarmerMessageId.class)
 public class FarmerFarmerMessage {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "FFMessageID", nullable = false)
     private int ffMessageID;
 
