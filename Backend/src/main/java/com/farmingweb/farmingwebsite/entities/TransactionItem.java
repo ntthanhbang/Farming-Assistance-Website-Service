@@ -9,7 +9,6 @@ import lombok.Data;
 @IdClass(TransactionItemId.class)
 public class TransactionItem {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "TransItemID", nullable = false)
     private int transItemID;
 
