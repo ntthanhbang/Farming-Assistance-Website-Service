@@ -6,6 +6,10 @@ body{
     background-size: cover;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 .icon{
     height: 150px;
     width: 150px;
