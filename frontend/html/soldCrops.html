@@ -33,6 +33,7 @@
             <a class="select-items-after-login" href="homePageFarmer.html">Home</a>
             <a class="select-items-after-login" href="">Contact</a>
             <a class="select-items-after-login" href="">LogOut</a>
+            <a class="select-items-after-login" href="">Message</a>
          </div>
 
          <div class="header-wrapper">
@@ -105,9 +106,47 @@
     
         
 
+         <div class="contact-wrapper">
+            <div class="contact-items-image">
+                <img src="../images/JFIF/contact.jfif" class="image-size"/>
+            </div>
+            <div class="contact-items-input">
+    <div class="contact-header">
+        Fresh, Healthy and Delicious
+    </div>
+
+    <br>
+
+    <div>
+        <input type="text" id="complaint-id" class="contact-input" placeholder="Complaint ID">
+        <input type="text" id="complaint-subject" class="contact-input" placeholder="Subject">
+    </div>
+
+    <br>
+
+    <div>
+        <!-- <input type="text" id="complaint-timestamp" class="contact-input" placeholder="Timestamp"> -->
+        <input type="text" id="complaint-farmerID" class="contact-input" placeholder="FarmerID">
+    </div>
+
+    <br>
+
+    <div>
+        <input type="text" id="complaint-content" class="contact-message" placeholder="Content">
+    </div>
+
+    <br>
+
+    <button id="submit-complaint" class="button">Submit</button>
+</div>
+</div>
+
+
          <footer class="footer">
             <p>&copy; 2025 Farming Assistance. All rights reserved.</p>
         </footer>
+
+        <script src="../js/submitComplaints.js"></script>
 
         <script src="../js/loadInventoryItems.js"></script>
     </body>

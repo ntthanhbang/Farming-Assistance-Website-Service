@@ -97,31 +97,27 @@
                     Fresh, Healthy and Delicious
                 </div>
 
-                <br> 
-
                 <div>
-                    <input type="text" class="contact-input" placeholder="Enter your first name">
-                    <input type="text" class="contact-input" placeholder="Enter your last name">
-                </div>
+        <input type="text" id="complaint-id" class="contact-input" placeholder="Complaint ID">
+        <input type="text" id="complaint-subject" class="contact-input" placeholder="Subject">
+    </div>
 
-                <br>
+    <br>
 
-                <div>
-                    <input type="text" class="contact-input" placeholder="Enter your email">
-                    <input type="text" class="contact-input" placeholder="Enter your number">
-                </div>
+    <div>
+        <!-- <input type="text" id="complaint-timestamp" class="contact-input" placeholder="Timestamp"> -->
+        <input type="text" id="complaint-farmerID" class="contact-input" placeholder="FarmerID">
+    </div>
 
-                <br>
+    <br>
 
-                <div>
-                    <input type="text" class="contact-message" placeholder="Message">
-                </div>
+    <div>
+        <input type="text" id="complaint-content" class="contact-message" placeholder="Content">
+    </div>
 
-                <br>
+    <br>
 
-                <button class="button">
-                    Submit
-                </button>
+    <button id="submit-complaint" class="button">Submit</button>
             </div>
          </div>
 
@@ -130,5 +126,6 @@
         </footer>
 
         <script src="../js/notifications.js"></script>
+        <script src="../js/submitComplaints.js"></script>
     </body>
 </html>
