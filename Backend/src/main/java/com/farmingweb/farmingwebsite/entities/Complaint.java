@@ -2,6 +2,7 @@ package com.farmingweb.farmingwebsite.entities;
 
 import com.farmingweb.farmingwebsite.enums.ComplaintStatus;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -15,13 +16,14 @@ import java.util.List;
 @IdClass(ComplaintId.class)
 public class Complaint {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    // @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ComplaintID", nullable = false)
     private Integer complaintID;
 
     @Id
     @ManyToOne
     @JoinColumn(name = "FarmerID")
+    @JsonIgnoreProperties(ignoreUnknown = true)
     private Farmer farmer;
 
     @Column(name = "Subject", nullable = false, length = 200)
