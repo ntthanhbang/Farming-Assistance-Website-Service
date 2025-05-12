@@ -25,15 +25,16 @@ public class NotificationController {
         return notificationService.getByFarmer(farmerID);
     }
     
-    public String getMethodName(@RequestParam String param) {
-        return new String();
-    }
-    
     @PostMapping
     public Notification create(@RequestBody Notification notif) {
         return notificationService.create(notif);
     }
 
+    @PutMapping("/mark-as-read/{id}")
+    public Notification markAsRead(@PathVariable Integer id) {
+        return notificationService.markAsRead(id);
+    }
+    
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Integer id) {
         notificationService.delete(id);

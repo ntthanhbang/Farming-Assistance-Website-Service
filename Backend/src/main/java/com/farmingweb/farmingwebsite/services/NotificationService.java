@@ -1,6 +1,7 @@
 package com.farmingweb.farmingwebsite.services;
 
 import com.farmingweb.farmingwebsite.entities.Notification;
+import com.farmingweb.farmingwebsite.enums.NotificationStatus;
 import com.farmingweb.farmingwebsite.repositories.NotificationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,5 +27,12 @@ public class NotificationService {
 
     public void delete(Integer id) {
         notificationRepository.deleteById(id);
+    }
+
+    public Notification markAsRead(Integer id) {
+        Notification notif = notificationRepository.findById(id)
+            .orElseThrow(() -> new RuntimeException("Notification not found"));
+        notif.setStatus(NotificationStatus.read);
+        return notificationRepository.save(notif);
     }
 }
