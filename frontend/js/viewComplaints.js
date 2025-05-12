@@ -2,8 +2,11 @@ document.addEventListener('DOMContentLoaded', function () {
     fetch('http://localhost:8081/api/complaints')
         .then(response => response.json())
         .then(data => {
-            const tableBody = document.getElementById('complaints-table-body');
-            tableBody.innerHTML = ''; // Clear existing rows
+            const reviewedBody = document.getElementById('reviewed-complaints-body');
+            const unreviewedBody = document.getElementById('unreviewed-complaints-body');
+
+            reviewedBody.innerHTML = '';
+            unreviewedBody.innerHTML = '';
 
             data.forEach(complaint => {
                 const row = document.createElement('tr');
@@ -16,7 +19,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     <td>${complaint.timestamp || ''}</td>
                 `;
 
-                tableBody.appendChild(row);
+                if (complaint.status && complaint.status.toUpperCase() === 'REVIEWED') {
+                    reviewedBody.appendChild(row);
+                } else {
+                    unreviewedBody.appendChild(row);
+                }
             });
         })
         .catch(error => {

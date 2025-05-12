@@ -56,28 +56,44 @@
 
             <!-- YOUR CODE IS HERE -->
              <div class="viewComplaints-container">
-            <div class="viewComplaints-header">
-                <h1>List of Complaints</h1>
-            </div>
+    <div class="viewComplaints-header">
+        <h1>List of Complaints</h1>
+    </div>
 
-                <table class="viewComplaints-list">
-                    <thead>
-                        <tr>
-                            <th>ComplaintID</th>
-                            <th>subject</th>
-                            <th>content</th>
-                            <th>status</th>
-                            <th>timestamp</th>
-                        </tr>
-                    </thead>
+    <div class="complaint-section">
+        <h2>Reviewed Complaints</h2>
+        <table class="viewComplaints-list">
+            <thead>
+                <tr>
+                    <th>ComplaintID</th>
+                    <th>Subject</th>
+                    <th>Content</th>
+                    <th>Status</th>
+                    <th>Timestamp</th>
+                </tr>
+            </thead>
+            <tbody id="reviewed-complaints-body"></tbody>
+        </table>
+    </div>
 
-                    <tbody id="complaints-table-body">      
-                    </tbody>
-                </table>
-            
+    <br>
 
-         </div>
-         </div>
+    <div class="complaint-section">
+        <h2>Unreviewed Complaints</h2>
+        <table class="viewComplaints-list">
+            <thead>
+                <tr>
+                    <th>ComplaintID</th>
+                    <th>Subject</th>
+                    <th>Content</th>
+                    <th>Status</th>
+                    <th>Timestamp</th>
+                </tr>
+            </thead>
+            <tbody id="unreviewed-complaints-body"></tbody>
+        </table>
+    </div>
+</div>
 
          
 
