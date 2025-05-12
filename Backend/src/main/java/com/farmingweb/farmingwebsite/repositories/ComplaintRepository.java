@@ -12,4 +12,6 @@ import java.util.List;
 @Repository
 public interface ComplaintRepository extends JpaRepository<Complaint, ComplaintId> {
     List<Complaint> findByStatus(ComplaintStatus status);
+
+    List<Complaint> findByFarmer_FarmerID(String farmerID);
 }

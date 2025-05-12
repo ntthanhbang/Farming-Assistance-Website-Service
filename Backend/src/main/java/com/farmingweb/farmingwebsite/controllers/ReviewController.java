@@ -21,7 +21,7 @@ public class ReviewController {
     }
 
     @PostMapping
-    public Review create(@RequestBody Review review) {
+    public Review saveReview(@RequestBody Review review) {
         return reviewService.saveReview(review);
     }
 

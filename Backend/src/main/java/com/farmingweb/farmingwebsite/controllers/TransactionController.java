@@ -20,9 +20,16 @@ public class TransactionController {
         return transactionService.getAll();
     }
 
+    //Display transactions (suppliers)
     @GetMapping("/supplier/{supplierID}")
     public List<Transaction> getBySupplier(@PathVariable String supplierID) {
         return transactionService.getTransactionsBySupplier(supplierID);
+    }
+    
+    //Display transactions (farmers)
+    @GetMapping("/farmer/{farmerID}")
+    public List<Transaction> getByFarmerID(@PathVariable String farmerID) {
+        return transactionService.getByFarmerID(farmerID);
     }
     
     @PostMapping("/create")

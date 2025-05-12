@@ -19,8 +19,11 @@ import java.util.List;
 public class TransactionService {
     @Autowired
     private TransactionRepository transactionRepository;
+    @Autowired
     private SupplierRepository supplierRepository;
+    @Autowired
     private FarmerRepository farmerRepository;
+    @Autowired
     private TransactionItemRepository transactionItemRepository;
 
     public List<Transaction> getAll() {
@@ -28,9 +31,7 @@ public class TransactionService {
     }
 
     public List<Transaction> getTransactionsBySupplier(String supplierID) {
-        Supplier supplier = supplierRepository.findById(supplierID)
-            .orElseThrow(() -> new RuntimeException("Supplier not found"));
-        return transactionRepository.findBySupplier(supplier);
+        return transactionRepository.findBySupplier_SupplierID(supplierID);
     }
 
     public Transaction createTransaction(Transaction transaction) {
@@ -55,6 +56,11 @@ public class TransactionService {
         return savedTransaction;
     }
 
+    //Display transactions (for farmers)
+    public List<Transaction> getByFarmerID(String farmerID) {
+        return transactionRepository.findByFarmer_FarmerID(farmerID);
+    }
+    
     public void delete(Integer id) {
         transactionRepository.deleteById(id);
     }

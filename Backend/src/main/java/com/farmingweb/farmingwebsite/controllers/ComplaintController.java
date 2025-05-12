@@ -32,6 +32,11 @@ public class ComplaintController {
         return complaintService.getByStatus(status);
     }
 
+    @GetMapping("/farmer/{farmerID}")
+    public List<Complaint> getComplaintsByFarmer(@PathVariable String farmerID) {
+        return complaintService.getByFarmer(farmerID);
+    }
+
     @PostMapping
     public Complaint create(@RequestBody Complaint complaint) {
         return complaintService.create(complaint);

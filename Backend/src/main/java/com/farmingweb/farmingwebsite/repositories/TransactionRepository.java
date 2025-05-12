@@ -1,6 +1,5 @@
 package com.farmingweb.farmingwebsite.repositories;
 
-import com.farmingweb.farmingwebsite.entities.Supplier;
 import com.farmingweb.farmingwebsite.entities.Transaction;
 
 import java.util.List;
@@ -10,5 +9,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TransactionRepository extends JpaRepository<Transaction, Integer> {
-    List<Transaction> findBySupplier(Supplier supplier);
+    List<Transaction> findBySupplier_SupplierID(String supplierID);
+
+    List<Transaction> findByFarmer_FarmerID(String farmerID);
 }

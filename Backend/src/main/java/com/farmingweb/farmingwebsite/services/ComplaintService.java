@@ -16,6 +16,7 @@ import java.util.Optional;
 public class ComplaintService {
     @Autowired
     private ComplaintRepository complaintRepository;
+    @Autowired
     private ReviewService reviewService;
 
     public List<Complaint> getAll() {
@@ -24,6 +25,10 @@ public class ComplaintService {
 
     public List<Complaint> getByStatus(ComplaintStatus status) {
         return complaintRepository.findByStatus(status);
+    }
+    
+    public List<Complaint> getByFarmer(String farmerID) {
+        return complaintRepository.findByFarmer_FarmerID(farmerID);
     }
     
     public Complaint create(Complaint complaint) {

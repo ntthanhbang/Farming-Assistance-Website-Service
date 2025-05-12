@@ -15,6 +15,7 @@ import java.util.List;
 public class AdvertisementService {
     @Autowired
     private AdvertisementRepository advertisementRepository;
+    @Autowired
     private SupplierRepository supplierRepository;
 
     public Advertisement createAd(String supplierID, Advertisement ad) {
