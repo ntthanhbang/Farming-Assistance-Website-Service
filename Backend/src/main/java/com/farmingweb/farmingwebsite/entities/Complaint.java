@@ -22,7 +22,6 @@ public class Complaint {
     @Id
     @ManyToOne
     @JoinColumn(name = "FarmerID")
-    @JsonIgnore
     private Farmer farmer;
 
     @Column(name = "Subject", nullable = false, length = 200)
@@ -38,7 +37,7 @@ public class Complaint {
     @Column(name = "Timestamp")
     private LocalDateTime timestamp;
 
-    @OneToMany
+    @OneToMany(mappedBy = "complaint")
     @JsonIgnore
     private List<Review> reviews;
 }
