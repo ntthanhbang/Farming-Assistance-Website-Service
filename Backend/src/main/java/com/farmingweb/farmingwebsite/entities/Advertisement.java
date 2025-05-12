@@ -20,7 +20,6 @@ public class Advertisement {
     @Id
     @ManyToOne
     @JoinColumn(name = "SupplierID")
-    @JsonIgnore
     private Supplier supplier;
 
     @Column(name = "Title", nullable = false)

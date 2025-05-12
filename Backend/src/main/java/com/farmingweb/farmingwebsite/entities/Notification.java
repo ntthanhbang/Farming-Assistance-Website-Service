@@ -1,7 +1,6 @@
 package com.farmingweb.farmingwebsite.entities;
 
 import com.farmingweb.farmingwebsite.enums.NotificationStatus;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -32,11 +31,9 @@ public class Notification {
 
     @ManyToOne
     @JoinColumn(name = "FarmerID")
-    @JsonIgnore
     private Farmer farmer;
 
     @OneToOne
     @JoinColumn(name = "AdID", referencedColumnName = "AdID")
-    @JsonIgnore
     private Advertisement advertisement;
 }

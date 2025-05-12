@@ -1,7 +1,5 @@
 package com.farmingweb.farmingwebsite.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -24,11 +22,9 @@ public class TransactionItem {
 
     @ManyToOne
     @JoinColumn(name = "TransactionID", nullable = false)
-    @JsonIgnore
     private Transaction transaction;
 
     @ManyToOne
     @JoinColumn(name = "ItemID", insertable = false, updatable = false)
-    @JsonIgnore
     private InventoryItem item;
 }

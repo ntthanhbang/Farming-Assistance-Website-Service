@@ -34,12 +34,10 @@ public class Transaction {
 
     @ManyToOne
     @JoinColumn(name = "FarmerID")
-    @JsonIgnore
     private Farmer farmer;
 
     @ManyToOne
     @JoinColumn(name = "SupplierID")
-    @JsonIgnore
     private Supplier supplier;
 
     @OneToMany(mappedBy = "transaction")

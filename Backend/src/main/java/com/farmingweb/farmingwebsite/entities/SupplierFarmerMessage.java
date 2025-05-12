@@ -1,7 +1,6 @@
 package com.farmingweb.farmingwebsite.entities;
 
 import com.farmingweb.farmingwebsite.enums.MessageStatus;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -38,11 +37,9 @@ public class SupplierFarmerMessage {
 
     @ManyToOne
     @JoinColumn(name = "FarmerID", referencedColumnName = "FarmerID", insertable = false, updatable = false)
-    @JsonIgnore
     private Farmer farmer;
 
     @ManyToOne
     @JoinColumn(name = "SupplierID", referencedColumnName = "SupplierID", insertable = false, updatable = false)
-    @JsonIgnore
     private Supplier supplier;
 }
