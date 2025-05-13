@@ -22,11 +22,12 @@ public class ComplaintController {
         return complaintService.getAll();
     }
 
+    //Display complaints
     @GetMapping("/new")
     public List<Complaint> getNewComplaints() {
         return complaintService.getNewComplaints();
     }
-
+    
     @GetMapping("/status/{status}")
     public List<Complaint> getByStatus(@PathVariable ComplaintStatus status) {
         return complaintService.getByStatus(status);
