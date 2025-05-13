@@ -56,62 +56,45 @@
 
             <div class="accountManagement-container">
                 <div class="accountManagement-header">
-                    <h1>Account Details</h1>
-                </div>
-    
-                <table class="accountManagement-list">
-                    <thead>
-                        <tr>
-                            <th>UserID</th>
-                            <th>Username</th>
-                            <th>Address</th>
-                            <th>Phone Number</th>
-                            <th>Email</th>
-                        </tr>
-                    </thead>
-                        
-                    <tbody>
-                        <tr>
-                            <td>123</td>
-                            <td>John Smith</td>
-                            <td>3863 Edgewood Avenue, Fresno</td>
-                            <td>310-200-9491</td>
-                            <td>johnsmith1234@gmail.com</td>
-                        </tr>
-    
-                        <tr>
-                            <td>523</td>
-                            <td>Edward Stuart</td>
-                            <td>2825 Pineview Drive, Elmore</td>
-                            <td>218-329-7050</td>
-                            <td>eddiestuart7158@yahoo.com</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>818</td>
-                            <td>Salome Deanne</td>
-                            <td>873 Lyon Avenue, New Bedford</td>
-                            <td>508-501-0310</td>
-                            <td>salomedeanne3523@gmail.com</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>135</td>
-                            <td>Alexandrina Tammie</td>
-                            <td>1603 Bird Spring Lane, League City</td>
-                            <td>903-515-5347</td>
-                            <td>alexandrinatammie596@gmail.com</td>
-                        </tr>
-    
-                        <tr>
-                            <td>824</td>
-                            <td>Coreen Giffard</td>
-                            <td>4495 Bridge Avenue, Scott</td>
-                            <td>318-803-0002</td>
-                            <td>coreengiffard456@gmail.com</td>
-                        </tr>
-                    </tbody>
-                </table>
+      <h1>Supplier Accounts</h1>
+    </div>
+
+    <table class="accountManagement-list" id="suppliersTable">
+      <thead>
+        <tr>
+          <th>UserID</th>
+          <th>Username</th>
+          <th>Address</th>
+          <th>Phone Number</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Data will be injected here -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- FARMER TABLE -->
+  <div class="accountManagement-container">
+    <div class="accountManagement-header">
+      <h1>Farmer Accounts</h1>
+    </div>
+
+    <table class="accountManagement-list" id="farmersTable">
+      <thead>
+        <tr>
+          <th>UserID</th>
+          <th>Username</th>
+          <th>Address</th>
+          <th>Phone Number</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Data will be injected here -->
+      </tbody>
+    </table>
              </div>
              
          </div>
@@ -122,5 +105,7 @@
          <footer class="footer">
             <p>&copy; 2025 Farming Assistance. All rights reserved.</p>
         </footer>
+
+        <script src="../js/Account.js"></script>
     </body>
 </html>
