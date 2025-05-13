@@ -12,7 +12,7 @@ import lombok.Data;
 @Table(name = "InventoryItem")
 public class InventoryItem {
     @Id
-    // @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ItemID", nullable = false)
     private Integer itemID;
 
